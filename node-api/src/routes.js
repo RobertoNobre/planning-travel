@@ -10,5 +10,6 @@ routes.post('/travels', TravelController.store);
 routes.put('/travels/:id', TravelController.update);
 routes.delete('/travels/:id', TravelController.destroy);
 routes.post('/auth/signup', UserController.signup);
+routes.post('/auth/signin', UserController.signin);
 
 module.exports = routes;
