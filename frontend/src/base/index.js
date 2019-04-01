@@ -7,7 +7,7 @@ class Index extends PureComponent {
     return (
       <Fragment>
         <MenuComponent {...this.props} />
-        <div style={{paddingLeft: '250px'}}>{this.props.children}</div>
+        <div style={{paddingLeft: '250px', paddingTop: '10px'}}>{this.props.children}</div>
       </Fragment>
     );
   }

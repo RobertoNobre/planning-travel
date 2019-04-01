@@ -1,19 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { RingLoader } from 'react-spinners';
+import Spinner from 'carbon-react/lib/components/spinner';
 
 const Loading = styled.div`
-  float: right;
-  margin-top: -33px;
+  margin-right: 30px;
 `
 
-export default ({ loading }) => (
+export default () => (
   <Loading>
-    <RingLoader
-      sizeUnit={"px"}
-      size={30}
-      color={'#337ab7'}
-      loading={loading}
-    />
+    <Spinner as="success" size="small"/>
   </Loading>
 );

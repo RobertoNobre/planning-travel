@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const baseURL = () => {  
   if (process.env.NODE_ENV === 'development') {
-    return `http://localhost:8080`;
+    return `http://localhost:3001/api`;
   }
 }
 
@@ -21,8 +21,8 @@ instance.interceptors.response.use((response) => {
   let failures = [];
   if (response.data.failures) {
     failures = response.data.failures;
-  } else {
-    failures.push(`(${response.data.status}) ${response.data.error} - ${response.data.message}`);
+  } else { 
+    failures.push(`${response.data.message}`);
   }
   return Promise.reject(failures);
 });

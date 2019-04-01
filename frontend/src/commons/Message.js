@@ -1,32 +1,26 @@
-import React, { PureComponent, Fragment } from 'react';
-import { Alert } from 'react-bootstrap';
+import React, { useState } from 'react';
+import Toast from 'carbon-react/lib/components/toast';
 
-class Message extends PureComponent {
-  messages = (msg) => (<Fragment key={msg}>{msg}<br/></Fragment>);
-
-  render() {
-    const { failures, bsStyleFailures, messages, bsStyleMessges} = this.props;
+export default ({ failures, bsStyleFailures, messages, bsStyleMessges}) => {
+  function msgs(msg) {return (<span key={msg}>{msg}<br/></span>)}
     return (
-      <Fragment>
+      <>
         {
           !!messages && messages.length > 0 &&
-          (<Fragment>
-            <Alert bsStyle={bsStyleMessges || 'info'} {...this.props}>
-              { messages.map(m => this.messages(m)) }
-            </Alert>
-          </Fragment>)
+          (<>
+            <Toast open={ true } as={bsStyleMessges || 'success'}>
+              { messages.map(m => msgs(m)) }
+            </Toast>
+          </>)
         }
         {
           !!failures && failures.length > 0 &&
-          (<Fragment>
-            <Alert bsStyle={bsStyleFailures || 'danger'} {...this.props}>
-              { failures.map(f => this.messages(f)) }
-            </Alert>
-          </Fragment>)
+          (<>
+            <Toast open={ true } as={bsStyleFailures || 'error'}>
+              { failures.map(f => msgs(f)) }
+            </Toast>
+          </>)
         }
-      </Fragment>
+      </>
     )
   }
-}
-
-export default Message;

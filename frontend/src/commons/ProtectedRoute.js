@@ -16,18 +16,12 @@ const ProtectedRoute = ({ component: Component, mode, ...rest }) =>
                         <Component mode={mode} {...props} />
                     </Base>
                 );
-            }
-            return (
-                <Base history={props.history}>
-                    <Component mode={mode} {...props} />
-                </Base>
-            );
-            /*return (
+            }return (
                 <Redirect to={{
                     pathname: '/auth/signin',
                     state: { from: props.location }
                 }} />
-            );*/
+            );
         }
     } />
 
