@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Toast from 'carbon-react/lib/components/toast';
 
 export default ({ failures, bsStyleFailures, messages, bsStyleMessges}) => {

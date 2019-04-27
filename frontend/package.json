@@ -16,6 +16,7 @@
     "carbon-react": "^6.3.2",
     "enumify": "^1.0.4",
     "formik": "^1.5.1",
+    "i18n-js": "^3.2.1",
     "jquery": "3.3.1",
     "jsonwebtoken": "^8.5.0",
     "moment": "^2.24.0",

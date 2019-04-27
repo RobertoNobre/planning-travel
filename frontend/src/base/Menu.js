@@ -28,10 +28,12 @@ export default function MenuComponent({history}) {
         <Portrait size="extra-large" shape="circle" initials={user.initials} />
         <Detail footnote={user.email} > {user.name} </Detail>
       </SidebarHeader>
-        <MenuList
-                onSelect={onSelectClick}>
+        <MenuList>
           <MenuListItem>
             <Link onClick={() => onSelectClick(1)}>Home</Link>
+          </MenuListItem>
+          <MenuListItem>
+            <Link onClick={() => onSelectClick(3)}>Travels</Link>
           </MenuListItem>
         </MenuList>
       </Sidebar>
